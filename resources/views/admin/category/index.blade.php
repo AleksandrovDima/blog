@@ -51,9 +51,8 @@
                                             <td>{{ $category->title }}</td>
                                             <td>{{ $category->created_at }}</td>
                                             <td>
-                                                <a href="{{ route('admin.category.show', $category->id) }}">
-                                                    <i class="far fa-eye"></i>
-                                                </a>
+                                                <a class="mr-2" href="{{ route('admin.category.show', $category->id) }}"><i class="far fa-eye"></i></a>
+                                                <a href="{{ route('admin.category.edit', $category->id) }}"><i class="fas fa-pencil-alt"></i></a>
                                             </td>
                                         </tr>
                                     @endforeach
