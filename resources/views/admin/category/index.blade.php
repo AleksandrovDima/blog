@@ -41,7 +41,7 @@
                                         <th>ID</th>
                                         <th>Название</th>
                                         <th>Дата</th>
-                                        <th>Действия</th>
+                                        <th colspan="2" class="text-center">Действия</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -51,8 +51,10 @@
                                             <td>{{ $category->title }}</td>
                                             <td>{{ $category->created_at }}</td>
                                             <td>
-                                                <a class="mr-2" href="{{ route('admin.category.show', $category->id) }}"><i class="far fa-eye"></i></a>
-                                                <a href="{{ route('admin.category.edit', $category->id) }}"><i class="fas fa-pencil-alt"></i></a>
+                                                <a href="{{ route('admin.category.show', $category->id) }}" class="text-black-50 mr-2" title="посмотреть"><i class="far fa-eye"></i></a>
+                                            </td>
+                                            <td>
+                                                <a href="{{ route('admin.category.edit', $category->id) }}" class="text-black-50 mr-2" title="редактировать"><i class="fas fa-pencil-alt"></i></a>
                                             </td>
                                         </tr>
                                     @endforeach
