@@ -10,6 +10,13 @@
                     <div class="col-sm-6 d-flex align-items-center">
                         <h1 class="m-0 mr-3">{{ $category->title }}</h1>
                         <a href="{{ route('admin.category.edit', $category->id) }}" class="text-black-50 mr-2" title="редактировать"><i class="fas fa-pencil-alt"></i></a>
+                        <td class="text-center">
+                            <form action="{{ route('admin.category.delete', $category->id) }}" method="POST">
+                                @csrf
+                                @method('Delete')
+                                <button type="submit"  class="border-0 bg-transparent text-black-50" title="удалить"><i class="fas fa-trash-alt"></i></button>
+                            </form>
+                        </td>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -26,11 +33,6 @@
         <section class="content">
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
-                <div class="row mb-3">
-                    <div class="col-auto">
-                        <a href="{{ route('admin.category.index') }}" class="btn btn-block btn-secondary">Назад</a>
-                    </div>
-                </div>
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="card">

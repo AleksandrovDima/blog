@@ -40,8 +40,8 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Название</th>
-                                        <th>Дата</th>
-                                        <th colspan="2" class="text-center">Действия</th>
+                                        <th class="text-center">Дата</th>
+                                        <th colspan="3" class="text-center">Действия</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -49,12 +49,19 @@
                                         <tr>
                                             <td>{{ $category->id }}</td>
                                             <td>{{ $category->title }}</td>
-                                            <td>{{ $category->created_at }}</td>
-                                            <td>
-                                                <a href="{{ route('admin.category.show', $category->id) }}" class="text-black-50 mr-2" title="посмотреть"><i class="far fa-eye"></i></a>
+                                            <td class="text-center">{{ $category->created_at }}</td>
+                                            <td class="text-center">
+                                                <a href="{{ route('admin.category.show', $category->id) }}" class="text-black-50" title="посмотреть"><i class="far fa-eye"></i></a>
                                             </td>
-                                            <td>
-                                                <a href="{{ route('admin.category.edit', $category->id) }}" class="text-black-50 mr-2" title="редактировать"><i class="fas fa-pencil-alt"></i></a>
+                                            <td class="text-center">
+                                                <a href="{{ route('admin.category.edit', $category->id) }}" class="text-black-50" title="редактировать"><i class="fas fa-pencil-alt"></i></a>
+                                            </td>
+                                            <td class="text-center">
+                                                <form action="{{ route('admin.category.delete', $category->id) }}" method="POST">
+                                                    @csrf
+                                                    @method('Delete')
+                                                    <button type="submit"  class="border-0 bg-transparent text-black-50" title="удалить"><i class="fas fa-trash-alt"></i></button>
+                                                </form>
                                             </td>
                                         </tr>
                                     @endforeach
