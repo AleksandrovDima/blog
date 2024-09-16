@@ -44,6 +44,22 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     });
 });
 
+Route::group(['namespace' => 'Personal', 'prefix' => 'personal'], function () {
+    Route::group(['namespace' => 'Main', 'prefix' => 'main'], function () {
+        Route::get('/', 'IndexController')->name('personal.main.index');
+    });
+
+    Route::group(['namespace' => 'Post', 'prefix' => 'post'], function () {
+        Route::get('/', 'IndexController')->name('personal.post.index');
+        Route::get('/create', 'CreateController')->name('personal.post.create');
+        Route::post('/', 'StoreController')->name('personal.post.store');
+        Route::get('/{post}', 'ShowController')->name('personal.post.show');
+        Route::get('/{post}/edit', 'EditController')->name('personal.post.edit');
+        Route::patch('/{post}', 'UpdateController')->name('personal.post.update');
+        Route::delete('/{post}', 'DeleteController')->name('personal.post.delete');
+    });
+});
+
 Auth::routes();
 
 
