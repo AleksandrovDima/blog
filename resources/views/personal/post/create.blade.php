@@ -30,7 +30,8 @@
                         <form action="{{ route('personal.post.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group w-50">
-                                <input type="text" name="title" class="form-control" placeholder="Название поста" value="{{ old('title') }}">
+                                <input type="text" name="title" class="form-control" placeholder="Название поста"
+                                       value="{{ old('title') }}">
                                 @error('title')
                                 <div class="text-danger">Это поле должно быть заполнено</div>
                                 @enderror
@@ -45,7 +46,8 @@
                                 <label for="inputFile">Добавить превью</label>
                                 <div class="input-group">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" name="preview_image" id="inputFile">
+                                        <input type="file" class="custom-file-input" name="preview_image"
+                                               id="inputFile">
                                         <label class="custom-file-label">Выберите изображение</label>
                                     </div>
                                     <div class="input-group-append">
@@ -53,7 +55,7 @@
                                     </div>
                                 </div>
                                 @error('preview_image')
-                                <div class="text-danger">{{ $message }}</div>
+                                <div class="text-danger">Это поле должно быть заполнено</div>
                                 @enderror
                             </div>
                             <div class="form-group w-50">
@@ -68,8 +70,18 @@
                                     </div>
                                 </div>
                                 @error('preview_image')
-                                <div class="text-danger">{{ $message }}</div>
+                                <div class="text-danger">Это поле должно быть заполнено</div>
                                 @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="category">Выберите категорию</label>
+                                <select name="category_id" class="form-control w-50" id="category">
+                                    @foreach($categories as $category)
+                                    <option value="{{ $category->id }}"
+                                    {{ $category->id == old('category_id') ? 'selected' : '' }}
+                                    >{{ $category->title }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary" value="Добавить">
