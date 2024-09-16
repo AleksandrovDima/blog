@@ -49,7 +49,7 @@
                                         <tr>
                                             <td>{{ $post->id }}</td>
                                             <td>{{ $post->title }}</td>
-                                            <td class="text-center">{{ $ost->created_at }}</td>
+                                            <td class="text-center">{{ $post->created_at }}</td>
                                             <td class="text-center">
                                                 <a href="{{ route('personal.post.show', $post->id) }}" class="text-black-50" title="посмотреть"><i class="far fa-eye"></i></a>
                                             </td>

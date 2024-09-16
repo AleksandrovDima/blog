@@ -9,9 +9,9 @@
                 <div class="row mb-2">
                     <div class="col-sm-6 d-flex align-items-center">
                         <h1 class="m-0 mr-3">{{ $post->title }}</h1>
-                        <a href="{{ route('$personal.ppost.edit', $post->id) }}" class="text-black-50 mr-2" title="редактировать"><i class="fas fa-pencil-alt"></i></a>
+                        <a href="{{ route('personal.post.edit', $post->id) }}" class="text-black-50 mr-2" title="редактировать"><i class="fas fa-pencil-alt"></i></a>
                         <td class="text-center">
-                            <form action="{{ route('$personal.ppost.delete', $post->id) }}" method="POST">
+                            <form action="{{ route('personal.post.delete', $post->id) }}" method="POST">
                                 @csrf
                                 @method('Delete')
                                 <button type="submit"  class="border-0 bg-transparent text-black-50" title="удалить"><i class="fas fa-trash-alt"></i></button>
