@@ -26,7 +26,7 @@
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-md-9 col-lg-7">
                         <form action="{{ route('personal.post.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group w-50">

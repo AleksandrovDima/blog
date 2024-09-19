@@ -26,12 +26,24 @@
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-md-9 col-lg-7">
                         <form action="{{ route('admin.user.store') }}" class="w-50" method="POST">
                             @csrf
                             <div class="form-group">
                                 <input type="text" name="name" class="form-control" placeholder="Имя пользователя">
                                 @error('name')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="email" class="form-control" placeholder="Email">
+                                @error('email')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="password" class="form-control" placeholder="Введите пароль">
+                                @error('password')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>

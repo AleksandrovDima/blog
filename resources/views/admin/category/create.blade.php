@@ -26,7 +26,7 @@
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-md-9 col-lg-7">
                         <form action="{{ route('admin.category.store') }}" class="w-50" method="POST">
                             @csrf
                             <div class="form-group">

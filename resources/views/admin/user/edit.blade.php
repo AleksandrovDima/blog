@@ -26,7 +26,7 @@
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-md-9 col-lg-7">
                         <form action="{{ route('admin.user.update', $user->id) }}" class="w-50" method="POST">
                             @method('PATCH')
                             @csrf
@@ -35,6 +35,15 @@
                                 @error('name')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="email" class="form-control" placeholder="Email"  value="{{ $user->email }}">
+                                @error('email')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <input type="hidden" name="user_id" value="{{ $user->id }}">
                             </div>
                             <input type="submit" class="btn btn-primary" value="Обновить">
                         </form>
