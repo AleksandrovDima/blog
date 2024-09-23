@@ -48,12 +48,14 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav mt-2 mt-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><span class="flag-icon flag-icon-squared rounded-circle flag-icon-gb"></span> Eng</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Download</a>
-                    </li>
+                    @auth()
+                        <li class="nav-item">
+                            <form action="{{ route('logout') }}" method="post">
+                                @csrf
+                                <input class="btn btn-outline-primary" type="submit" value="Выйти">
+                            </form>
+                        </li>
+                    @endauth
                 </ul>
             </div>
         </nav>
