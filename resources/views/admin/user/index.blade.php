@@ -12,8 +12,8 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard v1</li>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.main.index') }}">Главная</a></li>
+                            <li class="breadcrumb-item active">Пользователи</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -57,11 +57,31 @@
                                                 <a href="{{ route('admin.user.edit', $user->id) }}" class="text-black-50" title="редактировать"><i class="fas fa-pencil-alt"></i></a>
                                             </td>
                                             <td class="text-center">
-                                                <form action="{{ route('admin.user.delete', $user->id) }}" method="POST">
-                                                    @csrf
-                                                    @method('Delete')
-                                                    <button type="submit"  class="border-0 bg-transparent text-black-50" title="удалить"><i class="fas fa-trash-alt"></i></button>
-                                                </form>
+                                                <button type="button" class="border-0 bg-transparent text-black-50" title="удалить" data-toggle="modal" data-target="#modal-user">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </button>
+                                                <div class="modal fade" id="modal-user">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title">Вы точно хотите удалить пользователя?</h4>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-footer justify-content-between">
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
+                                                                <form action="{{ route('admin.user.delete', $user->id) }}" method="POST">
+                                                                    @csrf
+                                                                    @method('Delete')
+                                                                    <button type="submit" class="btn btn-danger">Да, удалить</button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /.modal-content -->
+                                                    </div>
+                                                    <!-- /.modal-dialog -->
+                                                </div>
                                             </td>
                                         </tr>
                                     @endforeach
