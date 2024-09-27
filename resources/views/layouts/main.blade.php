@@ -18,7 +18,8 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="{{ route('main.index') }}">Главная</a>
-            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#edicaMainNav" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#edicaMainNav"
+                    aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="edicaMainNav">
@@ -36,6 +37,11 @@
                             </form>
                         </li>
                     @endauth
+                    @guest()
+                        <li class="nav-item">
+                            <a href="{{ route('login') }}" class="btn btn-outline-primary" type="submit">Войти</a>
+                        </li>
+                    @endguest
                 </ul>
             </div>
         </nav>
