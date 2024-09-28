@@ -37,7 +37,7 @@
                         <!-- small box -->
                         <div class="small-box bg-danger">
                             <div class="inner">
-                                <h3>{{ $postsCount }}</h3>
+                                <h3>{{ $likedCount }}</h3>
                                 <p>Понравившиеся посты</p>
                             </div>
                             <div class="icon">
@@ -50,7 +50,7 @@
                         <!-- small box -->
                         <div class="small-box bg-success">
                             <div class="inner">
-                                <h3>{{ $postsCount }}</h3>
+                                <h3>{{ $commentCount }}</h3>
                                 <p>Комментарии</p>
                             </div>
                             <div class="icon">

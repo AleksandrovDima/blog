@@ -10,9 +10,10 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
+        $commentCount = auth()->user()->comments->count();
+        $likedCount = auth()->user()->likedPosts->count();
         $postsCount = Post::all()->count();
-        $Count = Post::all()->count();
-        $postsCount = Post::all()->count();
-        return view('personal.main.index', compact('postsCount'));
+
+        return view('personal.main.index', compact('postsCount', 'likedCount', 'commentCount'));
     }
 }
