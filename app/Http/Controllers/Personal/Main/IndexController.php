@@ -11,6 +11,8 @@ class IndexController extends Controller
     public function __invoke()
     {
         $postsCount = Post::all()->count();
+        $Count = Post::all()->count();
+        $postsCount = Post::all()->count();
         return view('personal.main.index', compact('postsCount'));
     }
 }

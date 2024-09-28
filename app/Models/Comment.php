@@ -18,6 +18,11 @@ class Comment extends Model
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
+    public function post()
+    {
+        return $this->belongsTo(Post::class, 'post_id', 'id');
+    }
+
     public function getDateCarbonAttribute()
     {
         return Carbon::parse($this->created_at);

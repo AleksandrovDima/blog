@@ -42,10 +42,10 @@
                                     @foreach($posts as $post)
                                         <tr>
                                             <td>{{ $post->id }}</td>
-                                            <td>{{ $post->title }}</td>
+                                            <td><a href="{{ route('post.show', $post->id) }}">{{ $post->title }}</a></td>
                                             <td class="text-center">{{ $post->created_at }}</td>
                                             <td class="text-center">
-                                                <a href="{{ route('personal.post.show', $post->id) }}" class="text-black-50" title="посмотреть"><i class="far fa-eye"></i></a>
+                                                <a href="{{ route('post.show', $post->id) }}" class="text-black-50" title="посмотреть"><i class="far fa-eye"></i></a>
                                             </td>
                                             <td class="text-center">
                                                 <form action="{{ route('personal.liked.delete', $post->id) }}" method="POST">

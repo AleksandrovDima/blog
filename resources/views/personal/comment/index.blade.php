@@ -25,7 +25,7 @@
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
-                    <div class="col-lg-9">
+                    <div class="col-lg-12">
                         <div class="card">
                             <!-- /.card-header -->
                             <div class="card-body table-responsive p-0">
@@ -33,7 +33,8 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Название</th>
+                                        <th>Комментарии</th>
+                                        <th class="text-center">В постах:</th>
                                         <th class="text-center">Дата</th>
                                         <th colspan="2" class="text-center">Действия</th>
                                     </tr>
@@ -43,6 +44,7 @@
                                         <tr>
                                             <td>{{ $comment->id }}</td>
                                             <td>{{ $comment->message }}</td>
+                                            <td class="text-center"><a href="{{ route('post.show', $comment->post->id) }}">{{ $comment->post->title }}</a></td>
                                             <td class="text-center">{{ $comment->created_at }}</td>
                                             <td class="text-center">
                                                 <a href="{{ route('personal.comment.edit', $comment->id) }}" class="text-black-50" title="редактировать"><i class="fas fa-pencil-alt"></i></a>
