@@ -9,7 +9,7 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $posts = Post::all();
+        $posts = auth()->user()->posts;
         return view('personal.post.index', compact('posts'));
     }
 }

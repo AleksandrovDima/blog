@@ -25,7 +25,7 @@
                         <div class="small-box bg-info">
                             <div class="inner">
                                 <h3>{{ $postsCount }}</h3>
-                                <p>Посты</p>
+                                <p>Мои посты</p>
                             </div>
                             <div class="icon">
                                 <i class="fas fa-clipboard"></i>
@@ -51,7 +51,7 @@
                         <div class="small-box bg-success">
                             <div class="inner">
                                 <h3>{{ $commentCount }}</h3>
-                                <p>Комментарии</p>
+                                <p>Мои комментарии</p>
                             </div>
                             <div class="icon">
                                 <i class="fas fa-comment"></i>

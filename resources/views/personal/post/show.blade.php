@@ -69,6 +69,20 @@
                                         <td>Название</td>
                                         <td>{{ $post->title }}</td>
                                     </tr>
+                                    <tr>
+                                        <td>Количество лайков</td>
+                                        <td>{{ $post->liked_users_count }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Количество комментариев</td>
+                                        <td>{{ $post->comments->count() }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Посмотреть пост</td>
+                                        <td>
+                                            <a href="{{ route('post.show', $post->id) }}" class="text-black-50" title="посмотреть"><i class="far fa-eye"></i></a>
+                                        </td>
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div>

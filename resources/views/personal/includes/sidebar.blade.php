@@ -8,9 +8,15 @@
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="{{ route('main.index') }}" class="nav-link">
+                    <a href="{{ route('personal.main.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-home"></i>
                         <p>Главная</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('main.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-home"></i>
+                        <p>Блог</p>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -22,7 +28,7 @@
                 <li class="nav-item">
                     <a href="{{ route('personal.post.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-clipboard"></i>
-                        <p>Посты</p>
+                        <p>Мои посты</p>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -34,7 +40,7 @@
                 <li class="nav-item">
                     <a href="{{ route('personal.comment.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-comment"></i>
-                        <p>Комментарии</p>
+                        <p>Мои комментарии</p>
                     </a>
                 </li>
             </ul>

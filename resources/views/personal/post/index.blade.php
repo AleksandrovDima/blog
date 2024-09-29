@@ -40,7 +40,7 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Название</th>
-                                        <th class="text-center">Дата</th>
+                                        <th class="text-center">Дата создания</th>
                                         <th colspan="3" class="text-center">Действия</th>
                                     </tr>
                                     </thead>

@@ -12,7 +12,7 @@ class IndexController extends Controller
     {
         $commentCount = auth()->user()->comments->count();
         $likedCount = auth()->user()->likedPosts->count();
-        $postsCount = Post::all()->count();
+        $postsCount = auth()->user()->posts->count();
 
         return view('personal.main.index', compact('postsCount', 'likedCount', 'commentCount'));
     }
