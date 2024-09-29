@@ -51,13 +51,13 @@
                                             <td>{{ $post->title }}</td>
                                             <td class="text-center">{{ $post->created_at }}</td>
                                             <td class="text-center">
-                                                <a href="{{ route('personal.post.show', $post->id) }}" class="text-black-50" title="посмотреть"><i class="far fa-eye"></i></a>
+                                                <a href="{{ route('personal.post.show', $post->id) }}" title="посмотреть"><i class="far fa-eye"></i></a>
                                             </td>
                                             <td class="text-center">
-                                                <a href="{{ route('personal.post.edit', $post->id) }}" class="text-black-50" title="редактировать"><i class="fas fa-pencil-alt"></i></a>
+                                                <a href="{{ route('personal.post.edit', $post->id) }}" class="text-green" title="редактировать"><i class="fas fa-pencil-alt"></i></a>
                                             </td>
                                             <td class="text-center">
-                                                <button type="button" class="border-0 bg-transparent text-black-50" title="удалить" data-toggle="modal" data-target="#modal-default">
+                                                <button type="button" class="border-0 bg-transparent text-danger" title="удалить" data-toggle="modal" data-target="#modal-default">
                                                     <i class="fas fa-trash-alt"></i>
                                                 </button>
                                                 <div class="modal fade" id="modal-default">

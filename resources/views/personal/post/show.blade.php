@@ -7,11 +7,12 @@
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
-                    <div class="col-sm-6 d-flex align-items-center">
+                    <div class="col-sm-6 d-flex justify-content-between align-items-center">
                         <h1 class="m-0 mr-3">{{ $post->title }}</h1>
-                        <a href="{{ route('personal.post.edit', $post->id) }}" class="text-black-50 mr-2" title="редактировать"><i class="fas fa-pencil-alt"></i></a>
-                        <div class="text-center">
-                            <button type="button" class="border-0 bg-transparent text-black-50" title="удалить" data-toggle="modal" data-target="#modal-default">
+                        <div>
+                        <a href="{{ route('post.show', $post->id) }}" title="посмотреть"><i class="far fa-eye mr-3"></i></a>
+                        <a href="{{ route('personal.post.edit', $post->id) }}" class="text-green mr-3" title="редактировать"><i class="fas fa-pencil-alt"></i></a>
+                            <button type="button" class="border-0 bg-transparent text-danger" title="удалить" data-toggle="modal" data-target="#modal-default">
                                 <i class="fas fa-trash-alt"></i>
                             </button>
                             <div class="modal fade" id="modal-default">
@@ -76,12 +77,6 @@
                                     <tr>
                                         <td>Количество комментариев</td>
                                         <td>{{ $post->comments->count() }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Посмотреть пост</td>
-                                        <td>
-                                            <a href="{{ route('post.show', $post->id) }}" class="text-black-50" title="посмотреть"><i class="far fa-eye"></i></a>
-                                        </td>
                                     </tr>
                                     </tbody>
                                 </table>
