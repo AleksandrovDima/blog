@@ -57,31 +57,13 @@
                                                 <a href="{{ route('personal.post.edit', $post->id) }}" class="text-green" title="редактировать"><i class="fas fa-pencil-alt"></i></a>
                                             </td>
                                             <td class="text-center">
-                                                <button type="button" class="border-0 bg-transparent text-danger" title="удалить" data-toggle="modal" data-target="#modal-default">
-                                                    <i class="fas fa-trash-alt"></i>
-                                                </button>
-                                                <div class="modal fade" id="modal-default">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h4 class="modal-title">Вы точно хотите удалить пост?</h4>
-                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                    <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                                            </div>
-                                                            <div class="modal-footer justify-content-between">
-                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
-                                                                <form action="{{ route('personal.post.delete', $post->id) }}" method="POST">
-                                                                    @csrf
-                                                                    @method('Delete')
-                                                                    <button type="submit" class="btn btn-danger">Да, удалить</button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-                                                        <!-- /.modal-content -->
-                                                    </div>
-                                                    <!-- /.modal-dialog -->
-                                                </div>
+                                                <form action="{{ route('personal.post.delete', $post->id) }}" method="POST">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button type="submit" class="border-0 bg-transparent">
+                                                        <i class="fas fa-trash-alt text-danger" role="button"></i>
+                                                    </button>
+                                                </form>
                                             </td>
                                         </tr>
                                     @endforeach
