@@ -44,16 +44,27 @@
                                         <tr>
                                             <td>{{ $comment->id }}</td>
                                             <td>{{ $comment->message }}</td>
-                                            <td class="text-center"><a href="{{ route('post.show', $comment->post->id) }}">{{ $comment->post->title }}</a></td>
+                                            <td class="text-center">
+                                                @if (isset($comment->post->id))
+                                                    <a href="{{  route('post.show', $comment->post->id ) }}">
+                                                        {{ $comment->post->title}}
+                                                    </a>
+                                                @else Пост удален
+                                                @endif
+                                            </td>
                                             <td class="text-center">{{ $comment->created_at }}</td>
                                             <td class="text-center">
-                                                <a href="{{ route('personal.comment.edit', $comment->id) }}" class="text-black-50" title="редактировать"><i class="fas fa-pencil-alt"></i></a>
+                                                <a href="{{ route('personal.comment.edit', $comment->id) }}"
+                                                   class="text-black-50" title="редактировать"><i
+                                                        class="fas fa-pencil-alt"></i></a>
                                             </td>
                                             <td class="text-center">
-                                                <form action="{{ route('personal.comment.delete', $comment->id) }}" method="POST">
+                                                <form action="{{ route('personal.comment.delete', $comment->id) }}"
+                                                      method="POST">
                                                     @csrf
                                                     @method('Delete')
-                                                    <button type="submit" class="border-0 bg-transparent text-black-50" title="удалить">
+                                                    <button type="submit" class="border-0 bg-transparent text-black-50"
+                                                            title="удалить">
                                                         <i class="fas fa-trash-alt"></i></button>
                                                 </form>
                                             </td>
